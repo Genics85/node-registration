@@ -15,6 +15,9 @@ const port=process.env.PORT || 5000;
 //Middlewares
 app.use(expressLO);
 app.set("view engine","ejs");
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
 //Routes
 app.use("/",require("./routes/index.js"));
 app.use("/users",require("./routes/user.js"))
